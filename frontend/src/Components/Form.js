@@ -21,7 +21,7 @@ const Form=()=>{
   const [errors, setErrors] = useState({});
   const [serverError, setServerError] = useState('');
   const handleReset = () => {
-    setFormData(initialFormData); // Reset formData to initial state
+    setFormData(initialFormData);
   };
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -61,7 +61,7 @@ const Form=()=>{
     }
 
     try {
-        const response = await axios.post("https://employee-form-welg.onrender.com/add", formData);
+        const response = await axios.post("https://employee-form-backend-7hdu.onrender.com/add", formData);
         console.log(response.data);
         alert('Employee added successfully!');
         navigate('/employees')
