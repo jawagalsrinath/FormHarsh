@@ -52,7 +52,7 @@ const Form=()=>{
     }
 
     try {
-        const response = await axios.put(`https://employee-form-welg.onrender.com/${formData.eId}`, formData);
+        const response = await axios.put(`https://employee-form-backend-7hdu.onrender.com/${formData.eId}`, formData);
         console.log(response.data);
         alert('Employee edited successfully!');
         navigate('/employees')
