@@ -6,7 +6,7 @@ require('dotenv').config();
 
 
 const app=express()
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: 'https://employee-form-frontend-vnjv.onrender.com' }));
 app.use(bodyParser.json());
 
 
