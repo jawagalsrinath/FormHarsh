@@ -10,7 +10,7 @@ const Table = () => {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const response = await axios.get('http://localhost:8088/employees');
+        const response = await axios.get('https://formharsh-backend.onrender.com/employees');
         setEmployees(response.data);
       } catch (err) {
         setError('Failed to fetch employee data');
