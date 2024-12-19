@@ -49,9 +49,7 @@ const Form=()=>{
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setServerError(''); // Clear previous server errors
-
-    // Check for frontend errors before submitting
+    setServerError('');
     const formErrors = {};
     if (!emailRegex.test(formData.email)) formErrors.email = 'Invalid email format';
     if (!phoneRegex.test(formData.phone)) formErrors.phone = 'Phone number must be 10 digits';
@@ -63,7 +61,7 @@ const Form=()=>{
     }
 
     try {
-        const response = await axios.post("http://localhost:8000/add", formData);
+        const response = await axios.post("https://employee-form-welg.onrender.com/add", formData);
         console.log(response.data);
         alert('Employee added successfully!');
         navigate('/employees')
