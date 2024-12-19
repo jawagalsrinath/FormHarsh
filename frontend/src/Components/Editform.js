@@ -52,7 +52,7 @@ const Form=()=>{
     }
 
     try {
-        const response = await axios.put(`http://localhost:8088/edit/${formData.eId}`, formData);
+        const response = await axios.put(`https://formharsh-backend.onrender.com/edit/${formData.eId}`, formData);
         console.log(response.data);
         alert('Employee edited successfully!');
         navigate('/employees')
