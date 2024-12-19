@@ -61,7 +61,7 @@ const Form=()=>{
     }
 
     try {
-        const response = await axios.post("https://employee-form-backend-7hdu.onrender.com/add", formData);
+        const response = await axios.post("http://localhost:8088/add", formData);
         console.log(response.data);
         alert('Employee added successfully!');
         navigate('/employees')

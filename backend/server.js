@@ -6,7 +6,7 @@ require('dotenv').config();
 
 
 const app=express()
-app.use(cors({ origin: 'https://employee-form-frontend-vnjv.onrender.com' }));
+app.use(cors());
 app.use(bodyParser.json());
 
 
@@ -55,7 +55,7 @@ app.post('/add',(req,res)=>{
         console.log('Duplicate Entry Detected');
         return res.status(400).json({ error: message });
       }
-        const insertQuery = 'INSERT INTO employee (eId,firstName,lastName,email,phone,department,doj,workrole) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+        const insertQuery = 'INSERT INTO employee (eId,firstName,lastName,email,phone,department,doj,role) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
         db.query(insertQuery, [eId, firstName,lastName, email, phone, department, doj, role], (err) => {
 
             if (err){
@@ -98,6 +98,6 @@ app.put('/edit/:eId', (req, res) => {
 });
 
 
-app.listen(8000, () => {
+app.listen(8088, () => {
     console.log('Server is running');
 });
